@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Your Page Events</title>
+	<link rel="stylesheet" href="styles.css" />
+	<style>
+		#moveme {position: absolute;}
+		.line {position: absolute; width: 150px; height:3px; 
+		background: -webkit-linear-gradient(left, #0f2027, #203a43, #2c5364);
+		background: -o-linear-gradient(left, #0f2027, #203a43, #2c5364);
+		background: linear-gradient(to right, #0f2027, #203a43, #2c5364); transform: rotate(-25deg);}
+		#line1 {bottom: 100px; left: 210px;}
+		#line2 {bottom: 60px; left: 60px;}
+		#line3 {bottom: 5px; left: 170px;}
+		canvas {
+			width: 1500px;
+			height: 1000px;
+		}
+	</style>
+</head>
+<body>
+
+	<header>
+		<h1>jQuery Events</h1>
+	</header>
+	
+	<article>
+		
+		<div id="moveme" class="box"><img src="airplane.png">
+			<div class="line" id="line1"></div><br>
+			<div class="line" id="line2"></div><br>
+			<div class="line" id="line3"></div><br>
+		</div>
+		
+		
+	</article>
+
+	<footer>
+		<p><a href="http://www.codefactory.wien/">&copy; Code Factory</a></p>
+	</footer>
+
+	<!-- load local copy of jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- my script -->
+	<script src="myscript.js"></script>
+
+</body>
+</html>

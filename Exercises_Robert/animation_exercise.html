@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>jQuery animation</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<style>
+		* { padding: 0; margin: 0; }
+		body { font-family: sans-serif; font-size: 100%; margin: 10px; color: #222; background-color: #eee; }
+		#animate { position: absolute; top: 80px; left: 100px; width: 180px; height: 120px; font-size: 2em; text-align: center; line-height: 118px; color: #fff; background-color: #00c; border: 2px solid #006; border-radius: 5px; }
+		#todoList li {
+			background-color: orange;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+
+<!-- 	<h1>jQuery Animation</h1>
+
+<div id="animate" style="display:none">ANIMATE</div> -->
+
+	<h1>TO-DO LIST</h1>
+
+	<input type="text" id="task" placeholder="Type in your tasks here">
+	<button id="input-btn">Add task</button>
+
+	<ul id="todoList">
+		<li>Eat</li>
+		<li>Sleep</li>
+		<li>Study</li>
+		<li>Watch a movie</li>
+		<li>buy groceries</li>
+	</ul>
+
+<script>
+	
+	$(document).ready(function() {
+
+		$("#animate").fadeIn("2500").delay(5000).fadeOut(2500);
+
+/*		$("#todoList li").on("click", function() {
+			$(this).animate({
+				opacity: 0.0,
+				paddingLeft: "+=80"
+			}, 2500, function() {
+				$(this).remove();
+			})
+			})*/
+
+		function fadeAway() {
+			$(this).animate({
+				opacity: 0.0,
+				paddingLeft: "+=80"
+			}, 2500, function() {
+				$(this).remove();
+			});
+		};
+
+	$("#todoList li").on("click", fadeAway);
+
+	/*need to set style of element to display: none to make it fade in!*/
+
+	$("#input-btn").on("click", function() {
+		var item = "<li style='display:none'>" + $("#task").val() + "</li>";
+		$(item).appendTo("#todoList").on("click", fadeAway).fadeIn(2500);
+	});
+	});	
+
+
+</script>
+
+</body>
+</html>
